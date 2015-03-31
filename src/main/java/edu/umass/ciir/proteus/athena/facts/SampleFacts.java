@@ -2,7 +2,7 @@ package edu.umass.ciir.proteus.athena.facts;
 
 import edu.umass.ciir.proteus.athena.Tool;
 import edu.umass.ciir.proteus.athena.cfg.Athena;
-import edu.umass.ciir.galagotools.utils.Util;
+import edu.umass.ciir.proteus.athena.utils.Util;
 import org.lemurproject.galago.utility.Parameters;
 
 import java.util.Collections;

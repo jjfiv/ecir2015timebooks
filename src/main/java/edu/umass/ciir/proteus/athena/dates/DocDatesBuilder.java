@@ -1,8 +1,8 @@
 package edu.umass.ciir.proteus.athena.dates;
 
-import edu.umass.ciir.galagotools.utils.IO;
 import edu.umass.ciir.proteus.athena.Tool;
 import edu.umass.ciir.proteus.athena.preprocess.SentenceIO;
+import edu.umass.ciir.proteus.athena.utils.IO;
 import gnu.trove.map.hash.TIntIntHashMap;
 import gnu.trove.procedure.TIntIntProcedure;
 import org.lemurproject.galago.core.btree.simple.DiskMapBuilder;

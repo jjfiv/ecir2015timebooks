@@ -1,14 +1,15 @@
 package edu.umass.ciir.proteus.athena.facts;
 
-import edu.umass.ciir.galagotools.utils.IO;
-import edu.umass.ciir.galagotools.galago.QueryUtil;
-import edu.umass.ciir.galagotools.utils.Util;
+import edu.umass.ciir.proteus.athena.galago.QueryUtil;
+import edu.umass.ciir.proteus.athena.utils.IO;
+import edu.umass.ciir.proteus.athena.utils.Util;
 import org.lemurproject.galago.core.retrieval.query.Node;
 import org.lemurproject.galago.utility.Parameters;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+
 
 /**
  * @author jfoley.
@@ -65,31 +66,31 @@ public class AmbiguousQuery {
 
     IO.forEachLine(new File(fileName), new IO.StringFunctor() {
 
-      int index = 0;
+			int index = 0;
 
-      @Override
-      public void process(String input) {
-        if (input.startsWith("#")) return;
+			@Override
+			public void process(String input) {
+				if (input.startsWith("#")) return;
 
-        String qid = String.format("aq-%s-%d", split, index++);
+				String qid = String.format("aq-%s-%d", split, index++);
 
-        Parameters p;
-        try {
-          p = Parameters.parseString(input);
-        } catch (IOException e) {
-          return;
-        }
-        if (!p.getString("split").equals(split)) {
-          return;
-        }
+				Parameters p;
+				try {
+					p = Parameters.parseString(input);
+				} catch (IOException e) {
+					return;
+				}
+				if (!p.getString("split").equals(split)) {
+					return;
+				}
 
-        List<FactQuery> inGroup = new ArrayList<FactQuery>();
-        for (Parameters fp : p.getList("facts", Parameters.class)) {
-          inGroup.add(new FactQuery(fp));
-        }
-        queries.add(new AmbiguousQuery(qid, inGroup));
-      }
-    });
+				List<FactQuery> inGroup = new ArrayList<FactQuery>();
+				for (Parameters fp : p.getList("facts", Parameters.class)) {
+					inGroup.add(new FactQuery(fp));
+				}
+				queries.add(new AmbiguousQuery(qid, inGroup));
+			}
+		});
 
     return queries;
   }

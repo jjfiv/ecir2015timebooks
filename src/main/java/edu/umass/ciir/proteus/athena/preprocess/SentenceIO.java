@@ -2,7 +2,7 @@ package edu.umass.ciir.proteus.athena.preprocess;
 
 import edu.umass.ciir.proteus.athena.cfg.DataSet;
 import edu.umass.ciir.proteus.athena.dates.DateRecognition;
-import edu.umass.ciir.galagotools.utils.IO;
+import edu.umass.ciir.proteus.athena.utils.IO;
 import org.lemurproject.galago.utility.Parameters;
 
 import java.io.File;
@@ -77,13 +77,13 @@ public class SentenceIO {
     final String dataset = argp.getString("dataset");
 
     IO.forEachLine(input, new IO.StringFunctor() {
-      @Override
-      public void process(String input) {
-        Data data = parseTSV(input, dataset);
-        if(data == null) return;
-        callback.process(data.bookId, data.pageNum, data.sentenceNum, data.year, data.sentenceText);
-      }
-    });
+			@Override
+			public void process(String input) {
+				Data data = parseTSV(input, dataset);
+				if (data == null) return;
+				callback.process(data.bookId, data.pageNum, data.sentenceNum, data.year, data.sentenceText);
+			}
+		});
   }
 
   public static class Data {

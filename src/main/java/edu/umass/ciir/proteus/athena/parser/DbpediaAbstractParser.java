@@ -1,7 +1,7 @@
 package edu.umass.ciir.proteus.athena.parser;
 
-import edu.umass.ciir.galagotools.utils.IO;
-import edu.umass.ciir.galagotools.utils.StrUtil;
+import edu.umass.ciir.proteus.athena.utils.IO;
+import edu.umass.ciir.proteus.athena.utils.StrUtil;
 import org.lemurproject.galago.core.parse.Document;
 import org.lemurproject.galago.core.parse.DocumentStreamParser;
 import org.lemurproject.galago.core.types.DocumentSplit;

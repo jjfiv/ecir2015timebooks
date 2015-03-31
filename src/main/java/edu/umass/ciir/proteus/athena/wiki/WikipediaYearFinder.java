@@ -1,8 +1,8 @@
 package edu.umass.ciir.proteus.athena.wiki;
 
-import edu.umass.ciir.galagotools.utils.Util;
-import edu.umass.ciir.galagotools.utils.XML;
 import edu.umass.ciir.proteus.athena.Tool;
+import edu.umass.ciir.proteus.athena.utils.Util;
+import edu.umass.ciir.proteus.athena.utils.XML;
 import org.lemurproject.galago.utility.Parameters;
 
 import javax.xml.stream.XMLStreamConstants;
@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  * @author jfoley
  */
 public class WikipediaYearFinder implements Tool {
-  // 1783 and 650_BC are all okay.
+	// 1783 and 650_BC are all okay.
   public static Pattern wikipediaYearPageTitle = Pattern.compile("^\\d{1,4}(\\sBC)?$");
 
   @Override

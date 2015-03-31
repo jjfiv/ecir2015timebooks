@@ -1,6 +1,5 @@
 package edu.umass.ciir.proteus.athena.parser;
 
-import edu.umass.ciir.galagotools.parser.BufferedReaderParser;
 import edu.umass.ciir.proteus.athena.preprocess.SentenceIO;
 import org.lemurproject.galago.core.parse.Document;
 import org.lemurproject.galago.core.types.DocumentSplit;

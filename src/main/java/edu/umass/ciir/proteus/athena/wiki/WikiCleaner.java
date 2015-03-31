@@ -1,9 +1,9 @@
 package edu.umass.ciir.proteus.athena.wiki;
 
-import edu.umass.ciir.galagotools.utils.DateUtil;
-import edu.umass.ciir.galagotools.utils.SGML;
-import edu.umass.ciir.galagotools.utils.StrUtil;
-import edu.umass.ciir.proteus.athena.linking.LinkingExperiment;
+
+import edu.umass.ciir.proteus.athena.utils.DateUtil;
+import edu.umass.ciir.proteus.athena.utils.SGML;
+import edu.umass.ciir.proteus.athena.utils.StrUtil;
 
 import java.util.regex.Pattern;
 
@@ -102,10 +102,6 @@ public class WikiCleaner {
   public static String internalLink(String page, String text) {
     String url = page.replaceAll("\\s", "_");
     return String.format("<a href=\"https://en.wikipedia.org/wiki/%s\">%s</a>", url, text);
-  }
-
-  public static String stripWikiUrlToTitle(String url) {
-    return LinkingExperiment.makeWikipediaTitle(StrUtil.removeFront(url, "https://en.wikipedia.org/wiki/"));
   }
 
   public static String unescapeAmpersandEscapes(String input) {

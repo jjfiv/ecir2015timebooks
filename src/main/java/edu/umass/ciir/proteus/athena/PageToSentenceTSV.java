@@ -1,14 +1,14 @@
 package edu.umass.ciir.proteus.athena;
 
-import ciir.proteus.parse.MBTEIPageParser;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
-import edu.umass.ciir.galagotools.utils.IO;
+import edu.umass.ciir.proteus.athena.parser.MBTEIPageParser;
+import edu.umass.ciir.proteus.athena.utils.IO;
 import edu.umass.ciir.proteus.athena.utils.NLP;
-import edu.umass.ciir.galagotools.utils.Util;
+import edu.umass.ciir.proteus.athena.utils.Util;
 import org.lemurproject.galago.core.parse.Document;
 import org.lemurproject.galago.core.parse.DocumentStreamParser;
 import org.lemurproject.galago.core.types.DocumentSplit;

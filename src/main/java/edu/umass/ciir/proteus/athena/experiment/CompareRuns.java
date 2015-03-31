@@ -1,9 +1,9 @@
 package edu.umass.ciir.proteus.athena.experiment;
 
-import edu.umass.ciir.galagotools.utils.DateUtil;
-import edu.umass.ciir.galagotools.utils.IO;
 import edu.umass.ciir.proteus.athena.Tool;
 import edu.umass.ciir.proteus.athena.cfg.DataSet;
+import edu.umass.ciir.proteus.athena.utils.DateUtil;
+import edu.umass.ciir.proteus.athena.utils.IO;
 import gnu.trove.map.hash.TObjectDoubleHashMap;
 import gnu.trove.map.hash.TObjectIntHashMap;
 import org.lemurproject.galago.utility.CmpUtil;
@@ -40,23 +40,23 @@ public class CompareRuns implements Tool {
     final ArrayList<Result> runData = new ArrayList<Result>();
 
     IO.forEachLine(new File(input), new IO.StringFunctor() {
-      @Override
-      public void process(String input) {
-        if(!input.startsWith("# query-result"))
-          return;
+			@Override
+			public void process(String input) {
+				if (!input.startsWith("# query-result"))
+					return;
 
-        String[] cols = input.split("\t");
-        String metric = cols[3];
-        if(!metric.equals(whichMetric)) {
-          return;
-        }
-        String qid = cols[1];
-        int year = DateUtil.YearFromString(cols[2]);
-        if(!DataSet.yearMatches(year, dataset)) return;
-        double score = Double.parseDouble(cols[4]);
-        runData.add(new Result(qid, year, score));
-      }
-    });
+				String[] cols = input.split("\t");
+				String metric = cols[3];
+				if (!metric.equals(whichMetric)) {
+					return;
+				}
+				String qid = cols[1];
+				int year = DateUtil.YearFromString(cols[2]);
+				if (!DataSet.yearMatches(year, dataset)) return;
+				double score = Double.parseDouble(cols[4]);
+				runData.add(new Result(qid, year, score));
+			}
+		});
 
     return runData;
   }

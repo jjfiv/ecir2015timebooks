@@ -1,8 +1,8 @@
 package edu.umass.ciir.proteus.athena;
 
-import edu.umass.ciir.galagotools.utils.IO;
-import edu.umass.ciir.galagotools.utils.Match;
 import edu.umass.ciir.proteus.athena.preprocess.SentenceIO;
+import edu.umass.ciir.proteus.athena.utils.IO;
+import edu.umass.ciir.proteus.athena.utils.Match;
 import org.lemurproject.galago.utility.Parameters;
 
 import java.util.regex.Pattern;

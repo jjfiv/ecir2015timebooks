@@ -1,11 +1,11 @@
 package edu.umass.ciir.proteus.athena.facts;
 
-import edu.umass.ciir.galagotools.utils.DateUtil;
-import edu.umass.ciir.galagotools.utils.IO;
-import edu.umass.ciir.galagotools.utils.SGML;
-import edu.umass.ciir.galagotools.utils.StrUtil;
 import edu.umass.ciir.proteus.athena.cfg.DataSet;
-import edu.umass.ciir.galagotools.galago.QueryUtil;
+import edu.umass.ciir.proteus.athena.galago.QueryUtil;
+import edu.umass.ciir.proteus.athena.utils.DateUtil;
+import edu.umass.ciir.proteus.athena.utils.IO;
+import edu.umass.ciir.proteus.athena.utils.SGML;
+import edu.umass.ciir.proteus.athena.utils.StrUtil;
 import org.lemurproject.galago.core.eval.QueryJudgments;
 import org.lemurproject.galago.core.eval.QuerySetJudgments;
 import org.lemurproject.galago.core.parse.Document;

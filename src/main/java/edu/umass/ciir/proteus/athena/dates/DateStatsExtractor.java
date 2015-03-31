@@ -1,7 +1,7 @@
 package edu.umass.ciir.proteus.athena.dates;
 
 import edu.umass.ciir.proteus.athena.Tool;
-import edu.umass.ciir.galagotools.utils.IO;
+import edu.umass.ciir.proteus.athena.utils.IO;
 import gnu.trove.map.hash.TIntIntHashMap;
 import org.lemurproject.galago.utility.Parameters;
 
@@ -24,18 +24,18 @@ public class DateStatsExtractor implements Tool {
 
     System.err.println("Find book dates");
     IO.forEachLine(new File("data/dated-sentences/usentences3.tsv.gz"), new IO.StringFunctor() {
-      @Override
-      public void process(String input) {
-        String[] fields = input.split("\t");
-        // parse and fit years
-        String timexValue = fields[3];
-        Integer year = DateRecognition.getYear(timexValue);
-        if(year == null) return;
+			@Override
+			public void process(String input) {
+				String[] fields = input.split("\t");
+				// parse and fit years
+				String timexValue = fields[3];
+				Integer year = DateRecognition.getYear(timexValue);
+				if (year == null) return;
 
-        if (year < 0 || year > 2025) {return;}
-        booksDates.adjustOrPutValue(10*(year/10), 1, 1);
-      }
-    });
+				if (year < 0 || year > 2025) {return;}
+				booksDates.adjustOrPutValue(10 * (year / 10), 1, 1);
+			}
+		});
 
     System.err.println("Find robust dates");
     IO.forEachLine(new File("data/robust04/u.robust04.sentences.tsv.gz"), new IO.StringFunctor() {

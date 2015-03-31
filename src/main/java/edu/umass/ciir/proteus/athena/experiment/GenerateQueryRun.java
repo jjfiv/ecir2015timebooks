@@ -4,7 +4,7 @@ import edu.umass.ciir.proteus.athena.Tool;
 import edu.umass.ciir.proteus.athena.cfg.Athena;
 import edu.umass.ciir.proteus.athena.cfg.DataSet;
 import edu.umass.ciir.proteus.athena.facts.AmbiguousQuery;
-import edu.umass.ciir.galagotools.utils.IO;
+import edu.umass.ciir.proteus.athena.utils.IO;
 import org.lemurproject.galago.core.retrieval.Results;
 import org.lemurproject.galago.core.retrieval.Retrieval;
 import org.lemurproject.galago.core.retrieval.ScoredDocument;

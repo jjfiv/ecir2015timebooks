@@ -1,6 +1,6 @@
 package edu.umass.ciir.proteus.athena.dates;
 
-import edu.umass.ciir.galagotools.utils.DateUtil;
+import edu.umass.ciir.proteus.athena.utils.DateUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;

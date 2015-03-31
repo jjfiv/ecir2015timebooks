@@ -2,7 +2,7 @@ package edu.umass.ciir.proteus.athena.dates;
 
 import edu.umass.ciir.proteus.athena.Tool;
 import edu.umass.ciir.proteus.athena.preprocess.SentenceIO;
-import edu.umass.ciir.galagotools.utils.IO;
+import edu.umass.ciir.proteus.athena.utils.IO;
 import org.lemurproject.galago.utility.Parameters;
 
 import java.io.File;

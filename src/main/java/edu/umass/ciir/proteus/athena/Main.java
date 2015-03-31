@@ -1,8 +1,5 @@
 package edu.umass.ciir.proteus.athena;
 
-import ciir.proteus.system.ProteusMain;
-import edu.umass.ciir.galagotools.fns.AddMetadataPart;
-import edu.umass.ciir.galagotools.fns.FindInterestingTerms;
 import edu.umass.ciir.proteus.athena.cfg.DataCounts;
 import edu.umass.ciir.proteus.athena.cfg.GetPubdate;
 import edu.umass.ciir.proteus.athena.dates.*;
@@ -11,7 +8,6 @@ import edu.umass.ciir.proteus.athena.experiment.EvaluateRun;
 import edu.umass.ciir.proteus.athena.experiment.GenerateFactRun;
 import edu.umass.ciir.proteus.athena.experiment.GenerateQueryRun;
 import edu.umass.ciir.proteus.athena.facts.*;
-import edu.umass.ciir.proteus.athena.linking.LinkingExperiment;
 import edu.umass.ciir.proteus.athena.preprocess.CollectPubDates;
 import edu.umass.ciir.proteus.athena.preprocess.RobustCollectPubDates;
 import edu.umass.ciir.proteus.athena.utils.StanfordNERJSONLines;
@@ -35,14 +31,7 @@ public class Main {
       new DocDateLMCollector(),
       new DocDatesBuilder(),
 
-      // citations
-      new WikiCitationFinder(),
-      new WikiLinkFinder(),
-      new CitationContextExtractor(),
-
-
       new WikipediaToHTML(),
-      new FindNonEnglishDocs(),
 
       new WikipediaYearFinder(),
       new WikiYearParser(),
@@ -52,12 +41,10 @@ public class Main {
       new DataCounts(),
       new SampleFacts(),
       new TermCounts(), // aka stopword detection
-      new GalagoTool(new FindInterestingTerms()),
       new DateDeltaExtractor(),
       new GetPubdate(),
 
       new CreateFactIndex(),
-      new GalagoTool(new AddMetadataPart()),
 
       // evaluate
       new GenerateFactRun(),
@@ -77,11 +64,8 @@ public class Main {
       new GalagoTool(new BuildIndex()),
       new GalagoTool(new DumpNamesLengths()),
       new GalagoTool(new DumpKeysFn()),
-      new GalagoTool(new ProteusMain()),
 
       // linking
-      new LinkingExperiment(),
-      new ExtractTextTagFromIndex(),
       new ExtractDatedSentences(),
 
 

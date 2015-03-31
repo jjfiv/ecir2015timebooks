@@ -1,9 +1,9 @@
 package edu.umass.ciir.proteus.athena.dates;
 
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import edu.umass.ciir.galagotools.galago.GalagoUtil;
-import edu.umass.ciir.galagotools.utils.DateUtil;
 import edu.umass.ciir.proteus.athena.Tool;
+import edu.umass.ciir.proteus.athena.galago.GalagoUtil;
+import edu.umass.ciir.proteus.athena.utils.DateUtil;
 import edu.umass.ciir.proteus.athena.utils.NLP;
 import org.lemurproject.galago.core.parse.Document;
 import org.lemurproject.galago.core.parse.DocumentStreamParser;

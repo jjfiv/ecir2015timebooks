@@ -1,18 +1,20 @@
 package edu.umass.ciir.proteus.athena.dates;
 
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import edu.umass.ciir.galagotools.galago.GalagoUtil;
-import edu.umass.ciir.galagotools.utils.IO;
-import edu.umass.ciir.galagotools.utils.StrUtil;
 import edu.umass.ciir.proteus.athena.Tool;
+import edu.umass.ciir.proteus.athena.galago.GalagoUtil;
+import edu.umass.ciir.proteus.athena.utils.IO;
 import edu.umass.ciir.proteus.athena.utils.NLP;
+import edu.umass.ciir.proteus.athena.utils.StrUtil;
 import org.lemurproject.galago.core.parse.Document;
 import org.lemurproject.galago.core.parse.DocumentStreamParser;
 import org.lemurproject.galago.core.types.DocumentSplit;
 import org.lemurproject.galago.utility.Parameters;
 
 import java.io.PrintWriter;
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author jfoley
@@ -31,13 +33,13 @@ public class ExtractDatedSentences implements Tool {
       List<String> previousOutput = argp.getAsList("previous", String.class);
       for (String prev : previousOutput) {
         IO.forEachLine(IO.file(prev), new IO.StringFunctor() {
-          @Override
-          public void process(String input) {
-            if(input.startsWith("#")) {
-              finished.add(StrUtil.removeFront(input, "#"));
-            }
-          }
-        });
+					@Override
+					public void process(String input) {
+						if (input.startsWith("#")) {
+							finished.add(StrUtil.removeFront(input, "#"));
+						}
+					}
+				});
       }
     }
 

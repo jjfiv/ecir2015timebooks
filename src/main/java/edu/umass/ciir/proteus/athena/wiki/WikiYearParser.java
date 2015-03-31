@@ -1,9 +1,9 @@
 package edu.umass.ciir.proteus.athena.wiki;
 
-import edu.umass.ciir.galagotools.utils.*;
 import edu.umass.ciir.proteus.athena.Tool;
-import org.lemurproject.galago.utility.Parameters;
+import edu.umass.ciir.proteus.athena.utils.*;
 import org.lemurproject.galago.tupleflow.Utility;
+import org.lemurproject.galago.utility.Parameters;
 
 import java.io.File;
 import java.util.*;
@@ -24,11 +24,11 @@ public class WikiYearParser implements Tool {
 
     for(File fp : inputFiles) {
       XML.forFieldsInSections(fp, "page", Arrays.asList("title", "text"), new XML.FieldsFunctor() {
-        @Override
-        public void process(Map<String, String> data) {
-          WikiYearParser.process(data.get("title"), data.get("text"));
-        }
-      });
+				@Override
+				public void process(Map<String, String> data) {
+					WikiYearParser.process(data.get("title"), data.get("text"));
+				}
+			});
     }
   }
 

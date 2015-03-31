@@ -1,8 +1,8 @@
 package edu.umass.ciir.proteus.athena.facts;
 
 import edu.umass.ciir.proteus.athena.Tool;
-import edu.umass.ciir.galagotools.utils.IO;
-import edu.umass.ciir.galagotools.utils.Util;
+import edu.umass.ciir.proteus.athena.utils.IO;
+import edu.umass.ciir.proteus.athena.utils.Util;
 import org.lemurproject.galago.core.eval.QuerySetJudgments;
 import org.lemurproject.galago.utility.Parameters;
 
@@ -33,11 +33,11 @@ public class FactsToQrels implements Tool {
 
     if(queryFormat.equals("json")) {
       List<Parameters> parameters = Util.map(queries, new Util.Transform<FactQuery, Parameters>() {
-        @Override
-        public Parameters process(FactQuery input) {
-          return input.toJSON();
-        }
-      });
+				@Override
+				public Parameters process(FactQuery input) {
+					return input.toJSON();
+				}
+			});
       Parameters queryJSON = Parameters.instance();
       queryJSON.put("queries", parameters);
       outputQueries.println(queryJSON.toPrettyString());

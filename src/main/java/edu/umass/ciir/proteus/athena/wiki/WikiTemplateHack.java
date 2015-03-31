@@ -1,5 +1,7 @@
 package edu.umass.ciir.proteus.athena.wiki;
 
+import edu.umass.ciir.proteus.athena.utils.StrUtil;
+
 import java.util.*;
 import java.util.regex.Pattern;
 

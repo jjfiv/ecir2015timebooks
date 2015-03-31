@@ -1,6 +1,6 @@
 package edu.umass.ciir.proteus.athena.wiki;
 
-import edu.umass.ciir.galagotools.utils.SGML;
+import edu.umass.ciir.proteus.athena.utils.SGML;
 import org.junit.Test;
 
 import java.util.Arrays;

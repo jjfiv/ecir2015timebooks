@@ -1,8 +1,8 @@
 package edu.umass.ciir.proteus.athena.cfg;
 
-import edu.umass.ciir.galagotools.galago.GalagoUtil;
 import edu.umass.ciir.proteus.athena.experiment.DateReranker;
 import edu.umass.ciir.proteus.athena.experiment.ScoredDate;
+import edu.umass.ciir.proteus.athena.galago.GalagoUtil;
 import gnu.trove.map.hash.TObjectIntHashMap;
 import org.junit.Assert;
 import org.junit.Test;

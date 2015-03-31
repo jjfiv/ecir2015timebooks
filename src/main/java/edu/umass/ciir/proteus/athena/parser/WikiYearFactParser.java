@@ -1,7 +1,6 @@
 package edu.umass.ciir.proteus.athena.parser;
 
-import edu.umass.ciir.galagotools.parser.BufferedReaderParser;
-import edu.umass.ciir.galagotools.utils.StrUtil;
+import edu.umass.ciir.proteus.athena.utils.StrUtil;
 import org.lemurproject.galago.core.parse.Document;
 import org.lemurproject.galago.core.types.DocumentSplit;
 import org.lemurproject.galago.utility.Parameters;

@@ -1,6 +1,5 @@
 package edu.umass.ciir.proteus.athena.dates;
 
-import ciir.proteus.parse.MBTEIPageParser;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
@@ -8,9 +7,10 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.time.Timex;
 import edu.stanford.nlp.util.CoreMap;
 import edu.umass.ciir.proteus.athena.Tool;
-import edu.umass.ciir.galagotools.utils.IO;
+import edu.umass.ciir.proteus.athena.parser.MBTEIPageParser;
+import edu.umass.ciir.proteus.athena.utils.IO;
 import edu.umass.ciir.proteus.athena.utils.NLP;
-import edu.umass.ciir.galagotools.utils.Util;
+import edu.umass.ciir.proteus.athena.utils.Util;
 import org.lemurproject.galago.core.parse.Document;
 import org.lemurproject.galago.core.types.DocumentSplit;
 import org.lemurproject.galago.utility.Parameters;
@@ -109,13 +109,13 @@ public class ExtractTimexSentences implements Tool {
     final Set<String> blacklistNames = new HashSet<String>();
     if(argp.isString("blacklist")) {
       IO.forEachLine(new File(argp.getString("blacklist")), new IO.StringFunctor() {
-        @Override
-        public void process(String input) {
-          if(!input.trim().isEmpty()) {
-            blacklistNames.add(input.trim());
-          }
-        }
-      });
+				@Override
+				public void process(String input) {
+					if (!input.trim().isEmpty()) {
+						blacklistNames.add(input.trim());
+					}
+				}
+			});
     }
 
     StanfordCoreNLP nlp = NLP.instance(argp);

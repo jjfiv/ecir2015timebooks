@@ -1,10 +1,10 @@
 package edu.umass.ciir.proteus.athena.wiki;
 
-import edu.umass.ciir.galagotools.utils.SGML;
-import edu.umass.ciir.galagotools.utils.StrUtil;
-import edu.umass.ciir.galagotools.utils.Util;
-import edu.umass.ciir.galagotools.utils.XML;
 import edu.umass.ciir.proteus.athena.Tool;
+import edu.umass.ciir.proteus.athena.utils.SGML;
+import edu.umass.ciir.proteus.athena.utils.StrUtil;
+import edu.umass.ciir.proteus.athena.utils.Util;
+import edu.umass.ciir.proteus.athena.utils.XML;
 import org.lemurproject.galago.utility.ByteUtil;
 import org.lemurproject.galago.utility.Parameters;
 import org.lemurproject.galago.utility.StreamCreator;
@@ -36,21 +36,21 @@ public class WikipediaToHTML implements Tool {
     try {
       for (File fp : inputFiles) {
         XML.forFieldsInSections(fp, "page", Arrays.asList("title", "text"), new XML.FieldsFunctor() {
-          @Override
-          public void process(Map<String, String> data) {
-            String pageTitle = data.get("title").replace(' ', '_');
-            if (pageTitle.isEmpty() || pageTitle.startsWith("Template") || pageTitle.startsWith("User"))
-              return;
-            String body = WikipediaToHTML.process(pageTitle, data.get("text"));
-            String html = String.format("<html><head><title>%s</title></head><body>%s</body></html>", pageTitle, body);
+					@Override
+					public void process(Map<String, String> data) {
+						String pageTitle = data.get("title").replace(' ', '_');
+						if (pageTitle.isEmpty() || pageTitle.startsWith("Template") || pageTitle.startsWith("User"))
+							return;
+						String body = WikipediaToHTML.process(pageTitle, data.get("text"));
+						String html = String.format("<html><head><title>%s</title></head><body>%s</body></html>", pageTitle, body);
 
-            try {
-              ZipUtil.write(zos, pageTitle + ".html", ByteUtil.fromString(html));
-            } catch (IOException e) {
-              throw new RuntimeException(e);
-            }
-          }
-        });
+						try {
+							ZipUtil.write(zos, pageTitle + ".html", ByteUtil.fromString(html));
+						} catch (IOException e) {
+							throw new RuntimeException(e);
+						}
+					}
+				});
       }
     } finally {
       zos.close();
@@ -65,11 +65,11 @@ public class WikipediaToHTML implements Tool {
     text = WikiCleaner.killWikiTables(text);
     text = text.replaceAll("''", ""); // ditch all italics
     text = StrUtil.transformBetween(text, WikiTemplateHack.templateStart, WikiTemplateHack.templateEnd, new StrUtil.Transform() {
-      @Override
-      public String process(String input) {
-        return processTemplate(title, input);
-      }
-    });
+			@Override
+			public String process(String input) {
+				return processTemplate(title, input);
+			}
+		});
     text = WikiCleaner.convertLinks(text);
     text = WikiCleaner.convertHeaders(text);
 

@@ -1,6 +1,6 @@
 package edu.umass.ciir.proteus.athena.experiment;
 
-import edu.umass.ciir.galagotools.utils.DateUtil;
+import edu.umass.ciir.proteus.athena.utils.DateUtil;
 import org.lemurproject.galago.core.retrieval.ScoredDocument;
 import org.lemurproject.galago.utility.CmpUtil;
 import org.lemurproject.galago.utility.lists.Ranked;

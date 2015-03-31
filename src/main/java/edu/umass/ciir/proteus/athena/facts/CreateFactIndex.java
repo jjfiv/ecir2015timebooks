@@ -2,7 +2,7 @@ package edu.umass.ciir.proteus.athena.facts;
 
 import edu.umass.ciir.proteus.athena.Tool;
 import edu.umass.ciir.proteus.athena.cfg.Athena;
-import edu.umass.ciir.galagotools.parser.JSONDocParser;
+import edu.umass.ciir.proteus.athena.parser.JSONDocParser;
 import org.lemurproject.galago.core.tools.apps.BuildIndex;
 import org.lemurproject.galago.tupleflow.FileUtility;
 import org.lemurproject.galago.utility.Parameters;

@@ -1,8 +1,8 @@
 package edu.umass.ciir.proteus.athena.cfg;
 
-import edu.umass.ciir.galagotools.utils.DateUtil;
 import edu.umass.ciir.proteus.athena.experiment.ScoredDate;
-import edu.umass.ciir.galagotools.galago.GalagoUtil;
+import edu.umass.ciir.proteus.athena.galago.GalagoUtil;
+import edu.umass.ciir.proteus.athena.utils.DateUtil;
 import gnu.trove.map.hash.TIntIntHashMap;
 import gnu.trove.map.hash.TObjectIntHashMap;
 import gnu.trove.procedure.TIntIntProcedure;

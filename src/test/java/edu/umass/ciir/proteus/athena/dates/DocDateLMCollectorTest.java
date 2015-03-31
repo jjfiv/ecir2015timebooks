@@ -8,9 +8,8 @@ import org.lemurproject.galago.core.parse.Document;
 import org.lemurproject.galago.core.parse.DocumentStreamParser;
 import org.lemurproject.galago.core.types.DocumentSplit;
 import org.lemurproject.galago.core.util.DocumentSplitFactory;
-import org.lemurproject.galago.tupleflow.FileUtility;
-import org.lemurproject.galago.utility.Parameters;
 import org.lemurproject.galago.tupleflow.Utility;
+import org.lemurproject.galago.utility.Parameters;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -22,8 +21,8 @@ public class DocDateLMCollectorTest {
     File inF = null;
     File outF = null;
     try {
-      inF = FileUtility.createTemporary();
-      outF = FileUtility.createTemporary();
+      inF = File.createTempFile("asd", "jkl");
+			outF = File.createTempFile("asd", "jkl");
 
       Utility.copyStringToFile(
         "doc0\t0\t0\t1982\tThis is the way things are, here in 1982.\n" +
@@ -76,8 +75,8 @@ public class DocDateLMCollectorTest {
     File inF = null;
     File outF = null;
     try {
-      inF = FileUtility.createTemporary();
-      outF = FileUtility.createTemporary();
+			inF = File.createTempFile("asdf", "jkl");
+			outF = File.createTempFile("asdf", "jkl");
 
       Utility.copyStringToFile(
           "doc0\t0\t0\t1982\tThis is the way things are, here in 1982.\n" +
@@ -116,10 +115,12 @@ public class DocDateLMCollectorTest {
 
 
     } finally {
-      Assert.assertNotNull(inF);
-      Assert.assertTrue(inF.delete());
-      Assert.assertNotNull(outF);
-      Assert.assertTrue(outF.delete());
+			if(inF != null) {
+				Assert.assertTrue(inF.delete());
+			}
+			if(outF != null) {
+				Assert.assertTrue(outF.delete());
+			}
     }
 
   }
@@ -129,8 +130,8 @@ public class DocDateLMCollectorTest {
     File inF = null;
     File outF = null;
     try {
-      inF = FileUtility.createTemporary();
-      outF = FileUtility.createTemporary();
+      inF = File.createTempFile("asdf", "jkl");
+			outF = File.createTempFile("asdf", "jkl");
 
       Utility.copyStringToFile(
         "doc0\t0\t0\t1982\tThis is the way things are, here in 1982.\n" +
@@ -162,10 +163,12 @@ public class DocDateLMCollectorTest {
       Assert.assertEquals("doc1", docs.get(0).metadata.get("book"));
       Assert.assertEquals("1783", docs.get(0).metadata.get("year"));
     } finally {
-      Assert.assertNotNull(inF);
-      Assert.assertTrue(inF.delete());
-      Assert.assertNotNull(outF);
-      Assert.assertTrue(outF.delete());
+			if(inF != null) {
+				Assert.assertTrue(inF.delete());
+			}
+			if(outF != null) {
+				Assert.assertTrue(outF.delete());
+			}
     }
 
   }

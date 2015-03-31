@@ -1,12 +1,11 @@
 package edu.umass.ciir.proteus.athena.dates;
 
 import edu.umass.ciir.proteus.athena.Main;
-import org.lemurproject.galago.core.btree.simple.DiskMapWrapper;
 import org.junit.Assert;
 import org.junit.Test;
-import org.lemurproject.galago.tupleflow.FileUtility;
-import org.lemurproject.galago.utility.Parameters;
+import org.lemurproject.galago.core.btree.simple.DiskMapWrapper;
 import org.lemurproject.galago.tupleflow.Utility;
+import org.lemurproject.galago.utility.Parameters;
 
 import java.io.File;
 
@@ -18,8 +17,8 @@ public class DocDateBuilderTest {
     File inF = null;
     File outF = null;
     try {
-      inF = FileUtility.createTemporary();
-      outF = FileUtility.createTemporary();
+			inF = File.createTempFile("asd", "jkl");
+			outF = File.createTempFile("asd", "jkl");
 
       Utility.copyStringToFile(
           "doc0\t0\t0\t1982\tThis is the way things are, here in 1982.\n" +
@@ -71,8 +70,8 @@ public class DocDateBuilderTest {
     File inF = null;
     File outF = null;
     try {
-      inF = FileUtility.createTemporary();
-      outF = FileUtility.createTemporary();
+			inF = File.createTempFile("asd", "jkl");
+			outF = File.createTempFile("asd", "jkl");
 
       Utility.copyStringToFile(
           "doc0\t0\t0\t1982\tThis is the way things are, here in 1982.\n" +
